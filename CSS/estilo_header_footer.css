@@ -1,0 +1,280 @@
+:root {
+  --verde-oscuro: #052501;
+  --marron-claro: #d8c3a5;
+  --blanco: #ffffff;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.eco-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* espacio entre los items */
+  align-items: center; /* alinea verticalmente íconos y texto */
+}
+
+.eco-nav li {
+  display: flex;
+  align-items: center;
+}
+
+.eco-nav a {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* espacio entre icono y texto */
+  text-decoration: none;
+  color: #fff; /* cámbialo al color que uses */
+}
+
+.eco-nav img {
+  width: 20px;  /* tamaño uniforme para todos */
+  height: 20px;
+  object-fit: contain;
+}
+
+
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #f5f5f5, #eaeaea);
+  color: var(--verde-oscuro);
+}
+
+/* HEADER */
+.eco-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background: var(--verde-oscuro);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.8s ease;
+  gap: 60px; /* NUEVA línea: aumenta separación */
+}
+
+
+/* Logo y texto */
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Empuja el menú a la derecha */
+}
+
+.logo {
+  height: 80px;
+}
+
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(2px);
+}
+
+.logo-text {
+  font-family: '', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  color: #E1C95F;
+  letter-spacing: 0px;
+  line-height: 1.1;
+}
+
+.slogan-text {
+  font-family: '', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #d8c3a5;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+}
+
+.logo-text:hover {
+  color: #d8c3a5;
+}
+
+/* NAV */
+.eco-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  list-style: none;
+  font-size: 17px;
+  margin: 5;
+  padding: 0;
+  color: #E1C95F;
+}
+
+.eco-nav li {
+  display: flex;
+  align-items: center;
+}
+
+.eco-nav a {
+  text-decoration: none;
+  color: var(--blanco);
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.elpato23{
+   max-width: 24px;
+   margin-top: -20;
+  margin: -4px;
+  cursor: pointer;
+    transition: 0.3s ease;
+  filter: brightness(0) invert(1); /* blanco */
+  
+}
+
+.elpato24{
+   max-width: 24px;
+   margin-top: -5px;
+  margin: -4px;
+  cursor: pointer;
+    transition: 0.3s ease;
+  filter: brightness(0) invert(1); /* blanco */
+  
+}
+
+.elpato25{
+   max-width: 16px;
+   margin-top: -5px;
+  margin: -2px;
+  cursor: pointer;
+    transition: 0.3s ease;
+  filter: brightness(0) invert(1); /* blanco */
+  
+}
+
+.elpato26{
+   max-width: 18px;
+   margin-top: -5px;
+  margin: -4px;
+  cursor: pointer;
+    transition: 0.3s ease;
+  filter: brightness(0) invert(1); /* blanco */
+  
+}
+
+.elpato27{
+   max-width: 22px;
+   margin-top: -5px;
+  margin: -4px;
+  cursor: pointer;
+    transition: 0.3s ease;
+  filter: brightness(0) invert(1); /* blanco */
+  
+}
+
+.elpato28{
+   max-width: 18px;
+   margin-top: -5px;
+  margin: -4px;
+  cursor: pointer;
+    transition: 0.3s ease;
+  filter: brightness(0) invert(1); /* blanco */
+  
+}
+
+.eco-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--marron-claro);
+  transition: width 0.3s ease;
+}
+
+.eco-nav a:hover {
+  color: #E1C95F;
+}
+
+.eco-nav a:hover::after {
+  width: 100%;
+}
+
+/* ANIMACIÓN */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* FOOTER */
+.eco-footer {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  text-align: center;
+  padding: 1rem 1rem;
+  margin-top: 3rem;
+  animation: fadeInUp 1s ease;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+/* Animaciones */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .eco-nav ul {
+    flex-direction: column;
+    background-color: var(--verde-oscuro);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    display: none;
+  }
+
+  .eco-nav ul.active {
+    display: flex;
+  }
+
+  .eco-nav-toggle {
+    display: block;
+    cursor: pointer;
+    color: var(--blanco);
+  }
+}

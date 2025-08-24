@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Vinculación al archivo CSS externo para estilos -->
+    <link rel="stylesheet" href="CSS/calculadoraFinal.css">
+    
+    <!-- Configuración de codificación y viewport para diseño responsivo -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Título de la pestaña del navegador -->
+    <title>GreenMind | Calculadora de Huella</title>
+    
+    <!-- Importación de fuente desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="img/gverde2.webp" type="image/gif" />
+
+</head>
+<body>
+  
+  <!-- header -->
+<header class="eco-header">
+  <div class="logo-container">  
+    <link rel="stylesheet" href="CSS/estilo_header_footer.css">
+    <img src="img/logoSinNombre2.png" alt="Logo" class="logo" />
+    <div class="logo-text-group">
+      <span class="logo-text">GreenMind</span>
+      <span class="slogan-text">Thinking a greener future</span>
+    </div>
+  </div>
+
+  <nav class="eco-nav">
+    <ul>
+    <li><a href="index.html"><img class="elpato23" src="img/home12.webp">Inicio</a></li>
+    <li><a href="transporte_sostenible.html"><img  class="elpato24" src="img/car13.png">Transporte</a></li>
+    <li><a href="alimentacion_consciente.html"><img class="elpato25" src="img/car10.png" >Alimentación</a></li>
+    <li><a href="uso_eficiente_energia.html"><img class="elpato26" src="img/light13.webp" >Energía</a></li>
+    <li><a href="reiclaje_reutilizacion.html"><img class="elpato27" src="img/basura12.png" >Reciclaje</a></li>
+    <li><a href="calculadora_carbono.html"><img class="elpato28" src="img/earth.png">Calcula tu Huella</a></li>
+
+    </ul>
+  </nav>
+</header>
+<br><br><br>
+
+
+
+
+  <!-- Contenedor principal de la calculadora -->
+  <div class="calculadora">
+
+    <!-- Sección superior con mensaje y logo centrados -->
+    <div style="text-align: center;">
+        <h3 style="font-family:Arial, Helvetica, sans-serif;">"El cambio empieza contigo."</h3>
+
+        <!-- Imagen del logo -->
+        <img src="img/logoSinNombre2.png" alt="GreenMind" width="290px" height="190px">
+    </div>
+
+    <!-- Título principal de la calculadora -->
+    <h2>Calculadora de Huella de Carbono</h2>
+
+    <!-- Barra de progreso para indicar avance en los pasos -->
+    <div class="progress-wrapper" aria-label="Progreso de la calculadora">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- Primer paso: entrada de consumo de electricidad -->
+    <div class="step active" id="step1" role="group" aria-labelledby="label-step1">
+      <label id="label-step1" for="electricidad">¿Cuántos Kwh de electricidad consumes al mes? Paso 1</label>
+      <input type="number" id="electricidad" placeholder="Ej: 150" min="0" />
+      <div class="btn-group">
+
+        <!-- Botón para avanzar al siguiente paso -->
+        <button onclick="nextStep(1)">Siguiente</button>
+      </div>
+    </div>
+
+    <!-- Segundo paso: entrada de consumo de gas propano -->
+    <div class="step" id="step2" role="group" aria-labelledby="label-step2">
+      <label id="label-step2" for="gas">¿Cuántas libras de gas propano consumes al mes? Paso 2</label>
+      <input type="number" id="gas" placeholder="Ej: 30" min="0" />
+      <div class="btn-group">
+
+        <!-- Botón para avanzar al siguiente paso -->
+        <button onclick="nextStep(2)">Siguiente</button>
+      </div>
+    </div>
+
+    <!-- Tercer paso: entrada de consumo de gasolina -->
+    <div class="step" id="step3" role="group" aria-labelledby="label-step3">
+      <label id="label-step3" for="gasolina">¿Cuántos galones de gasolina consumes al mes? Paso 3</label>
+      <input type="number" id="gasolina" placeholder="Ej: 80" min="0" />
+      <div class="btn-group">
+
+        <!-- Botón para mostrar el resultado final -->
+        <button onclick="showResult()">Ver resultado</button>
+      </div>
+    </div>
+
+
+    <!-- Contenedor donde se mostrará el resultado de la huella de carbono -->
+    <div id="resultado" role="region" aria-live="polite" aria-label="Resultado de la huella de carbono"></div>
+
+
+    <!-- Contenedor para el gráfico generado con Chart.js -->
+    <div id="contenedorGrafica">
+      <canvas id="resultChart" aria-label="Gráfico de emisiones mensuales" role="img"></canvas>
+    </div><br><br><br>
+
+    <!-- Contenedor donde se mostrará el impacto estimado (texto o descripción) -->
+    <div id="impacto" role="region" aria-live="polite" aria-label="Impacto estimado"></div><br><br>
+
+
+    
+
+
+
+    
+
+
+
+
+
+
+<!-- Contenedor para botones finales: Reiniciar y PDF -->
+<div class="btn-group" style="margin-top: 20px; justify-content: center; display: flex; gap: 15px;">
+    <!-- Botón para reiniciar -->
+    <button id="resetBtn" style="display: none;" onclick="resetCalculator()">Reiniciar</button>
+
+    <!-- Botón para descargar PDF -->
+    <button id="downloadPdfBtn" style="display: none;">Descargar PDF</button>
+</div>
+
+
+
+   
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+  <!-- Importación de la librería Chart.js para gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Importación del archivo JavaScript que contiene la lógica de la calculadora -->
+  <script src="JavaScript/calculadoraFinal.js"></script>
+
+<footer class="eco-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 GreenMind. Todos los derechos reservados.</p>
+      <p>Thinking a greener future.</p>
+    </div>
+  </footer>
+
+
+
+</body>
+
+
+
+</html>

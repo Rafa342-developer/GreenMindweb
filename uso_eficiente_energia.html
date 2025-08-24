@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>GreenMind | Energía Eficiente</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="CSS/styleUE.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="img/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="CSS/jquery.mCustomScrollbar.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/gverde2.webp" type="image/gif" />
+
+
+   
+</head>
+<!--inicio del body-->
+<body>
+    
+    <!-- inicio del header -->
+    <header class="eco-header">
+  <div class="logo-container">  
+    <link rel="stylesheet" href="CSS/estilo_header_footer.css">
+    <img src="img/logoSinNombre2.png" alt="Logo" class="logo" />
+    <div class="logo-text-group">
+      <span class="logo-text">GreenMind</span>
+      <span class="slogan-text">Thinking a greener future</span>
+    </div>
+  </div>
+
+  <nav class="eco-nav">
+    <ul>
+    <li><a href="index.html"><img class="elpato23" src="img/home12.webp">Inicio</a></li>
+    <li><a href="transporte_sostenible.html"><img  class="elpato24" src="img/car13.png">Transporte</a></li>
+    <li><a href="alimentacion_consciente.html"><img class="elpato25" src="img/car10.png" >Alimentación</a></li>
+    <li><a href="uso_eficiente_energia.html"><img class="elpato26" src="img/light13.webp" >Energía</a></li>
+    <li><a href="reiclaje_reutilizacion.html"><img class="elpato27" src="img/basura12.png" >Reciclaje</a></li>
+    <li><a href="calculadora_carbono.html"><img class="elpato28" src="img/earth.png">Calcula tu Huella</a></li>
+
+    </ul>
+  </nav>
+</header>
+
+    <!-- end header -->
+    <section >   <!-- inicio del contenedor con el inicio de la informácion de este sitio -->
+    <div class="container2">
+        <div class="textoinicio">
+            <h2>USO EFICIENTE DE LA ENERGÍA</h2>
+            <br>
+            <p>Energía Eficiente significa utilizar solo la energía que realmente es necesaria,
+                            sin desperdiciarla. No es dejar de usarla, sino, usarla con inteligencia, 
+                            cuidando los recursos naturales y así reducir el impacto ambiental.</p>
+        </div>
+            <div class="imageninicio">
+                        <figure><img src="img/94.png" alt="img" class="imagen-circular" /></figure>
+            </div>
+    </div>
+ </section>
+     <!--Consecuencias sobre el uso de la energía-->
+
+                    
+                            
+<!--Final del contenedor de cartas-->
+
+  <section class="energia-container">
+
+  <div class="energia-consejos">
+    <h2>CONSEJOS PARA AHORRAR ENERGÍA EN CASA</h2>
+    <p>La energía es un recurso valioso y limitado, por lo que es importante utilizarla de manera eficiente. Aquí hay algunos consejos para ahorrar energía en casa:</p>
+    
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <div class="tarjeta-img">
+          <img src="img/bombillos.png" alt="Bombillos LED">
+        </div>
+        <div class="tarjeta-info">
+          <h3>Usar Bombillos LED</h3>
+          <button class="btn-tarjeta" onclick="abrirModal('modal-led')">Ver más</button>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-img">
+          <img src="img/bajoconsumo.png" alt="Aparatos bajo consumo">
+        </div>
+        <div class="tarjeta-info">
+          <h3>Aparatos de bajo consumo</h3>
+          <button class="btn-tarjeta" onclick="abrirModal('modal-aparatos')">Ver más</button>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-img">
+          <img src="img/bici5.png" alt="Transportes sostenibles">
+        </div>
+        <div class="tarjeta-info">
+          <h3>Transportes sostenibles</h3>
+          <button class="btn-tarjeta" onclick="abrirModal('modal-transporte')">Ver más</button>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="tarjeta-img">
+          <img src="img/luznatu.png" alt="Luz natural">
+        </div>
+        <div class="tarjeta-info">
+          <h3>Aprovechar la luz natural</h3>
+          <button class="btn-tarjeta" onclick="abrirModal('modal-luz')">Ver más</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODALES -->
+<div id="modal-led" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-led')">&times;</span>
+    <div class="modal-icon"><img class="juel2" src="img/focoo.png" alt=""></div>
+    <h3>Usar Bombillos LED</h3>
+    <p>Los bombillos LED consumen hasta un 80% menos energía que los incandescentes y duran más tiempo, reduciendo costos y emisiones.</p>
+  </div>
+</div>
+
+<div id="modal-aparatos" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-aparatos')">&times;</span>
+    <div class="modal-icon"> <img class="juel" src="img/sin.png" alt=""></div>
+    <h3>Aparatos de bajo consumo</h3>
+    <p>Utiliza electrodomésticos con certificación de eficiencia energética, ya que consumen menos electricidad y protegen el medio ambiente.</p>
+  </div>
+</div>
+
+<div id="modal-transporte" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-transporte')">&times;</span>
+    <div class="modal-icon"><img class="juel" src="img/bai.png" alt=""></div>
+    <h3>Utilizar transportes sostenibles</h3>
+    <p>Optar por caminar, usar bicicleta o transporte público disminuye el consumo de combustibles fósiles y reduce la contaminación.</p>
+  </div>
+</div>
+
+<div id="modal-luz" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-luz')">&times;</span>
+    <div class="modal-icon"><img class="juel" src="img/soi.png" alt=""></div>
+    <h3>Aprovechar la luz natural</h3>
+    <p>Mantén las cortinas abiertas durante el día para reducir el uso de bombillas y aprovechar la luz del sol de manera gratuita y ecológica.</p>
+  </div>
+</div>
+
+  <script src="JavaScript/secion2UE.js"></script>
+    <!-- Final  -->
+    
+            <div style="background-color: #fff;">
+                   <h3 class="beneficios">Beneficios de la eficiencia energética</h3>
+                            
+
+                  <div class="beneficios2">
+
+                 <!--seccion de beneficios -->
+             
+                  
+                        <div class="ok oki1">
+                            <h3>Ahorro de energía y costes </h3>
+                            <figure><img   class="jijo" src="data:image/jpeg;base64,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" alt="img" /></figure>
+                            <p>Al utilizar menos recursos para llevar a cabo una actividad contribuimos al ahorro energético. Además,
+                                un menor gasto de energía. </p>
+                        </div>
+                        <div class="ok oki2">
+                            <h3>Mejoras para el medioambiente </h3>
+                            <figure><img  class="jijo" src="https://i.pinimg.com/1200x/bd/e9/7a/bde97a62445c735cb6766dc74a9f54df.jpg" alt="img" /></figure>
+                            <p>Con el uso responsable de la energía se consumen menos recursos, 
+                                lo que contribuye a reducir la huella de carbono. </p>
+                        </div>
+                        <div class="ok oki3">
+                            <h3>Mejoras en el abastecimiento </h3>
+                            <figure><img  class="jijo" src="https://i.pinimg.com/736x/d1/23/d9/d123d96646b0e2d5a128699cf41c2174.jpg" alt="img" /></figure>
+                            <p>La eficiencia energética nos permite optimizar el uso de recursos naturales 
+                                y crear economía de proximidad, fomentando con ello el consumo responsable.</p>
+                        </div>
+                    </div>
+    </div>
+    
+    
+  <footer class="eco-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 GreenMind. Todos los derechos reservados.</p>
+      <p>Thinking a greener future.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
